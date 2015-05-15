@@ -1,0 +1,70 @@
+
+
+Autores: Gabriel Tavares 14/0040447 UnB
+         Filipe Afonso 14/0039694 UnB
+
+
+Documento de requisição para o projeto Mapeamento de Vagas
+	
+INTRODUCAO
+
+	O programa procura resolver o problema de se encontrar vagas em estacionamentos por meio da analise da foto do estacionamento, com isso indicando ao usuario qual o numero de vagas remanecente no estacionamento.
+
+REQUISITOS
+
+	- Para a execucao da analise da imagem, partimos do principio de que as fotos sao recebidas atraves de um diretorio (Est_Vis_Aerea), fotos as quais serao tiradas sempre da mesma posicao, a qual e centralizada e "aerea", a fim de que se tenha uma situacao que evite problemas como: carros cobrindo outros carros; parte do estacionamento ser nao coberta; carros com formas muito variadas.
+
+	- Para evitar a inclusao de variaveis incontrolaveis, foi criada uma situacao ideal (uma maquete), viabilizando, pois, os requisitos anteriores supracitados. A maquete consiste numa base de isopor quadrada (50cmx50cm) com o estacionamento posicioado em seu centro e cercado por duas calcadas simetricas entre si (feitas de isopor superposto a base quadrada). A area delimitada pelo estacionamento foi incoberta por papel TNT preto para simular o asfalto escuro, a medida que tambem serve de contraste com a calcada anteriormente descrita e com as faixas que demarcam os limites das vagas (feitas de barbante branco), facilitando a posterior analise de imagem. Outro aspecto importante de ser necessario o uso da maquete inclui a possibilidade de controlar a quantidade de carros que estarao no estacionamento, ja que se precisa de uma foto com o estacionamento vazio para servir de base comparativa.
+
+DESIGN
+
+	-Elementos:
+		-Cameras;
+		-Processador da imagem;
+		-Sensor;
+		-Interface com o usuario;
+		-
+
+	-Estrutura
+		-Processo central
+			-Havera um processo central o qual se preocupara em abrir e fechar novas secoes para novas cameras;
+			-Imprimir ao usuario o mapa do estacionamento indicando vagas disponiveis;
+			-Recebe dados sobre o estado do estacionamento;
+			-Lidar com aversidades como: problemas de funcionamento de processos adjacentes (cameras),
+			-Executa enquanto "sair" nao for verdade;
+
+		-Processo adjacentes (PDI)
+			-Sera aberta atraves do processo principal e consistira em captura e analise de imagens do estacionamento;
+			-Enviara relatorios para o processo central, atualisando-o a respeito do estado dele;
+			-Ser sensitivo a adversidades como: perda de referencial inicial (Algo movimentou a angulacao da camera), iluminacao,
+			-Tem um diretorio inerente para monitoramento do recebimento de imagens, monitoramento o qual realizavel atraves de um sensor
+	
+	-Parte grafica (saida para o usuario)
+		Retrata graficamente as posicoes disponiveis e indisponiveis das vagas do estacionamento
+
+	-Processamento de imagem (PDI)
+		As imagens serao abertas por auxilio de certa API do java, sendo, entao, armazenadas em array bidimensional formado por pixels correspondente ao tamanho da imagem. A cada novo angulo de cobertura e necessario armazenar-se uma estrutura base, a qual sera usada para se comparar com as entradas.
+
+-OBJETOS DE SOFTWARE
+	-Estacionamento
+		-Quantidade de vagas;
+		-Quantidade de vagas ocupadas;
+		-Vagas (obj);
+			-Estado (ocupada/vazia);
+			-Ordem;
+			-Tamanho fixo;
+			-Array de pixels;
+		-Tamanho da vaga;
+		-Sensor (obj);
+			-Caminho para diretorio correspondente;
+			-Trigger;
+
+	-CompGrafEst
+		-Mapa do estacionamento;
+		-Carros;
+		-Adornos;
+
+
+
+
+
