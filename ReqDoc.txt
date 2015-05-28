@@ -30,7 +30,7 @@ DESIGN
 			-Havera um processo central o qual se preocupara em abrir e fechar novas secoes para novas cameras;
 			-Imprimir ao usuario o mapa do estacionamento indicando vagas disponiveis;
 			-Recebe dados sobre o estado do estacionamento;
-			-Lidar com aversidades como: problemas de funcionamento de processos adjacentes (cameras),
+			-Lidar com adversidades como: problemas de funcionamento de processos adjacentes (cameras),
 			-Executa enquanto "sair" nao for verdade;
 
 		-Processo adjacentes (PDI)
