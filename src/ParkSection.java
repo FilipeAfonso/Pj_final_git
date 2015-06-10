@@ -8,7 +8,7 @@ import java.util.Vector;
  * which allows an application to monitor and control a park.
  *
  * @author      Gabriel Santos Tavares da Silva
- * @author      Felipe Afonso Nogueira Borges
+ * @author      Filipe Afonso Nogueira Borges
  * @version     %I%, %G%
  * @since       1.0
  */

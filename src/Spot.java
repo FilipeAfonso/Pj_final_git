@@ -1,8 +1,11 @@
 
+
 /**
+ * It is a virtual representacion of a real spot, it has
+ * a state that shows if it is occupied.
  *
  * @author      Gabriel Santos Tavares da Silva
- * @author      Felipe Afonso Nogueira Borges
+ * @author      Filipe Afonso Nogueira Borges
  * @version     %I%, %G%
  * @since       1.0
  */
